@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
-// import { sendOtp, setSignupData } from '../../../redux/slices/authSlice';
+
+import { setSignupData } from '../../../slices/authSlice.js';
+import { sendOtp } from '../../../services/operations/authAPI.js';
 import { useNavigate } from 'react-router-dom';
 
 function SignUpForm() {
@@ -47,13 +49,31 @@ function SignUpForm() {
 
 	return (
 		<div className="flex min-h-screen items-center justify-center px-4 py-12">
-			<div className="w-full max-w-xl rounded-lg bg-gray-800 p-8 shadow-lg">
-				<h2 className="mb-6 text-3xl font-bold text-white">
-					Create an account
+			{/* Outer container for the glass card effect */}
+			<div
+				className="
+          relative z-10 p-6 rounded-lg shadow-lg
+          bg-white bg-opacity-10
+          backdrop-blur-md backdrop-filter
+          border border-solid border-white border-opacity-30
+          w-full max-w-xl
+          md:p-8
+        "
+				style={{
+					// Adding a subtle inner shadow to enhance the glass look
+					boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+				}}
+			>
+				<h2 className="mb-6 text-3xl font-bold text-[#fdfffc] text-center">
+					Create an Account
 				</h2>
+				<p className="text-[#AFB2BF] text-center mb-6">
+					Join us and start your learning journey today!
+				</p>
+
 				<form onSubmit={handleOnSubmit} className="space-y-5">
 					{/* First and Last Name */}
-					<div className="flex gap-4">
+					<div className="flex flex-col sm:flex-row gap-4">
 						<input
 							type="text"
 							name="firstName"
@@ -61,7 +81,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="First Name"
-							className="w-1/2 rounded-md border border-gray-600 bg-gray-700 p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+							className="w-full sm:w-1/2 rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
 						/>
 						<input
 							type="text"
@@ -70,7 +90,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Last Name"
-							className="w-1/2 rounded-md border border-gray-600 bg-gray-700 p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+							className="w-full sm:w-1/2 rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
 						/>
 					</div>
 
@@ -82,7 +102,7 @@ function SignUpForm() {
 						onChange={handleOnChange}
 						required
 						placeholder="Email"
-						className="w-full rounded-md border border-gray-600 bg-gray-700 p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+						className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
 					/>
 
 					{/* Password */}
@@ -94,7 +114,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Password"
-							className="w-full rounded-md border border-gray-600 bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+							className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 pr-10 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
 						/>
 						<span
 							onClick={() => setShowPassword((prev) => !prev)}
@@ -117,7 +137,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Confirm Password"
-							className="w-full rounded-md border border-gray-600 bg-gray-700 p-3 pr-10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+							className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 pr-10 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
 						/>
 						<span
 							onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -134,7 +154,12 @@ function SignUpForm() {
 					{/* Submit Button */}
 					<button
 						type="submit"
-						className="w-full rounded-md bg-rose-600 px-4 py-3 text-white hover:bg-rose-700 transition-all duration-200 font-semibold"
+						className="
+              w-full rounded-md bg-[#ccff33] px-4 py-3 font-semibold
+              text-black transition-all duration-200 hover:scale-95
+              shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none
+              focus:outline-none focus:ring-2 focus:ring-[#ccff33] focus:ring-offset-2
+            "
 					>
 						Sign Up
 					</button>

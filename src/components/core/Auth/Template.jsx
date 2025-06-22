@@ -9,7 +9,7 @@ function Template({ title, formType }) {
 	return (
 		<div className="h-screen w-full flex items-center justify-center">
 			{loading ? (
-				<div class="spinner"></div>
+				<div className="spinner"></div>
 			) : (
 				<div>{formType == 'signup' ? <SignUpFrom /> : <LoginForm />}</div>
 			)}

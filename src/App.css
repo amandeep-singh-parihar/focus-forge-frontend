@@ -2,11 +2,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Gilroy';
+	/*font-family: 'Gilroy';*/
 }
 
 html,
 body {
 	height: 100%;
 	width: 100%;
+	background: #f6f3ee;
 }
