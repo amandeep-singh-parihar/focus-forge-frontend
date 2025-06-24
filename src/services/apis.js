@@ -18,7 +18,9 @@ export const goalEndpoints = {
 
 // pomodoro endpoints
 export const pomodoroEndpoints = {
-	// pending
+  START_POMODORO_API: BASE_URL + '/pomodoro/start',
+  UPDATE_POMODORO_STATUS_API: (sessionId) => BASE_URL + `/pomodoro/${sessionId}/status`,
+  GET_POMODORO_SESSIONS_API: BASE_URL + '/pomodoro/user',
 };
 
 // summary endpoints
