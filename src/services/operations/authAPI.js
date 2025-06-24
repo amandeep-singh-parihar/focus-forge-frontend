@@ -114,11 +114,9 @@ export function login(email, password, navigate) {
 				: `https://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`;
 			dispatch(setUser({ ...user, image: userImage }));
 
-			// localStorage.setItem("token", JSON.stringify(token));
-			// localStorage.setItem("user", JSON.stringify(user));
 
-			localStorage.setItem('token', JSON.stringify(response.data.token));
-			localStorage.setItem('user', JSON.stringify(user));
+			localStorage.setItem('token', response.data.token);
+			localStorage.setItem('user', user);
 
 			toast.success('Login Successful');
 			navigate('/dashboard/my-profile');
