@@ -1,6 +1,5 @@
 import { GiProgression } from 'react-icons/gi';
 import { GoGoal } from 'react-icons/go';
-import { SlCalender } from 'react-icons/sl';
 import { BsKanban } from 'react-icons/bs';
 import { MdTimer } from 'react-icons/md';
 import { IoInformationCircleOutline } from 'react-icons/io5';
@@ -20,10 +19,10 @@ const data = [
 		path: '/dashboard/goals',
 	},
 	{
-		id: 'calendar',
-		name: 'Upcoming Events',
-		logo: <SlCalender />,
-		path: '/dashboard/calendar',
+		id: 'pomodoroSession',
+		name: 'Pomodoro Timer',
+		logo: <MdTimer />,
+		path: '/dashboard/pomodoro',
 	},
 	{
 		id: 'kanban',
@@ -31,12 +30,7 @@ const data = [
 		logo: <BsKanban />,
 		path: '/dashboard/kanban',
 	},
-	{
-		id: 'pomodoroSession',
-		name: 'Pomodoro Timer',
-		logo: <MdTimer />,
-		path: '/dashboard/pomodoro',
-	},
+
 	{
 		id: 'aboutUs',
 		name: 'About Us',

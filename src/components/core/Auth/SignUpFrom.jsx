@@ -47,24 +47,24 @@ function SignUpForm() {
 		dispatch(sendOtp(email, navigate));
 	};
 
+	const loginHandler = () => {
+		navigate('/login');
+	};
+
 	return (
 		<div className="flex min-h-screen items-center justify-center px-4 py-12">
 			{/* Outer container for the glass card effect */}
 			<div
 				className="
           relative z-10 p-6 rounded-lg shadow-lg
-          bg-white bg-opacity-10
+          bg-[#252422]
           backdrop-blur-md backdrop-filter
-          border border-solid border-white border-opacity-30
+          border border-solid border-[#252422] border-opacity-30
           w-full max-w-xl
           md:p-8
         "
-				style={{
-					// Adding a subtle inner shadow to enhance the glass look
-					boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-				}}
 			>
-				<h2 className="mb-6 text-3xl font-bold text-[#fdfffc] text-center">
+				<h2 className="mb-6 text-3xl font-bold text-[#FFFCF2] text-center">
 					Create an Account
 				</h2>
 				<p className="text-[#AFB2BF] text-center mb-6">
@@ -81,7 +81,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="First Name"
-							className="w-full sm:w-1/2 rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
+							className="w-full sm:w-1/2 rounded-md   bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
 						/>
 						<input
 							type="text"
@@ -90,7 +90,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Last Name"
-							className="w-full sm:w-1/2 rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
+							className="w-full sm:w-1/2 rounded-md  bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
 						/>
 					</div>
 
@@ -102,7 +102,7 @@ function SignUpForm() {
 						onChange={handleOnChange}
 						required
 						placeholder="Email"
-						className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
+						className="w-full rounded-md   bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
 					/>
 
 					{/* Password */}
@@ -114,7 +114,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Password"
-							className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 pr-10 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
+							className="w-full rounded-md   bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
 						/>
 						<span
 							onClick={() => setShowPassword((prev) => !prev)}
@@ -137,7 +137,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Confirm Password"
-							className="w-full rounded-md border border-gray-600 bg-[#292f36] p-3 pr-10 text-[#fdfffc] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ccff33]"
+							className="w-full rounded-md  bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
 						/>
 						<span
 							onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -155,15 +155,23 @@ function SignUpForm() {
 					<button
 						type="submit"
 						className="
-              w-full rounded-md bg-[#ccff33] px-4 py-3 font-semibold
-              text-black transition-all duration-200 hover:scale-95
+              w-full rounded-md bg-[#EB5E28] px-4 py-3 font-semibold
+              text-[#FFFCF2] transition-all duration-200 hover:scale-95
               shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none
-              focus:outline-none focus:ring-2 focus:ring-[#ccff33] focus:ring-offset-2
+              focus:outline-none focus:ring-2 focus:ring-[#EB5E28] focus:ring-offset-2
             "
 					>
 						Sign Up
 					</button>
 				</form>
+				<div
+					onClick={() => loginHandler()}
+					className="text-[#FFFCF2] mt-6 text-center cursor-pointer"
+				>
+					<p>
+						Already have an account <span className="underline">LogIn</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	);

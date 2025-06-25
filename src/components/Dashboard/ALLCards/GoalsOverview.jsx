@@ -6,6 +6,7 @@ import {
 	updateGoalAPI,
 	deleteGoalAPI,
 } from '../../../services/operations/goalAPI.js';
+import { updateTodaySummaryAPI } from '../../../services/operations/dailySummaryAPI.js';
 
 const statusOptions = ['not_started', 'in_progress', 'completed'];
 
@@ -54,13 +55,17 @@ const GoalsOverview = () => {
 
 	const handleStatusChange = (goalId, newStatus) => {
 		dispatch(updateGoalAPI(goalId, { status: newStatus }, token));
+
+		if (newStatus === 'completed') {
+			dispatch(updateTodaySummaryAPI(token, { goalsCompleted: 1 }));
+		}
 	};
 
 	const today = new Date().toISOString().split('T')[0];
 
 	return (
-		<div className="p-4 w-full max-w-4xl mx-auto">
-			<h2 className="text-2xl font-bold mb-4">Your Goals</h2>
+		<div className="p-4 w-full max-w-6xl mx-auto">
+			<h2 className="text-4xl font-bold mb-4">Your Goals</h2>
 
 			<form
 				onSubmit={handleSubmit}
@@ -73,19 +78,19 @@ const GoalsOverview = () => {
 					value={formData.title}
 					onChange={handleChange}
 					required
-					className="w-full p-2 border rounded"
+					className="w-full p-2 border rounded border-[#000000] bg-[#E5E5E5]"
 				/>
 				<input
 					type="date"
 					name="targetDate"
 					value={formData.targetDate}
 					onChange={handleChange}
-					className="w-full p-2 border rounded"
+					className="w-full p-2 border border-[#000000] rounded bg-[#E5E5E5]"
 					min={today}
 				/>
 				<button
 					type="submit"
-					className="bg-blue-500 text-white px-4 py-2 rounded"
+					className="bg-[#FCA311] text-[#000000] font-semibold px-4 py-2 rounded"
 				>
 					{editingGoalId ? 'Update Goal' : 'Add Goal'}
 				</button>
@@ -95,20 +100,22 @@ const GoalsOverview = () => {
 				{loading ? (
 					<p>Loading...</p>
 				) : goals.length === 0 ? (
-					<p>No goals yet. Add one!</p>
+					<p className="font-semibold">
+						<i>No goals yet. Add one!</i>
+					</p>
 				) : (
 					goals.map((goal) => (
-						<div key={goal._id} className="p-4 border rounded shadow bg-white">
-							<h3 className="text-xl font-semibold">{goal.title}</h3>
-							<p className="text-sm text-gray-500">
-								Target: {goal.targetDate?.split('T')[0] || 'N/A'}
+						<div key={goal._id} className="p-4 border rounded-md shadow bg-white">
+							<h3 className="text-xl font-semibold capitalize">{goal.title}</h3>
+							<p className="text-sm text-gray-500 mt-1 mb-1">
+								Target : {goal.targetDate?.split('T')[0] || 'N/A'}
 							</p>
 							<div className="mt-2">
 								<label className="text-sm font-medium">Status:</label>
 								<select
 									value={goal.status}
 									onChange={(e) => handleStatusChange(goal._id, e.target.value)}
-									className="ml-2 border rounded p-1 text-sm"
+									className="ml-2 rounded p-1 text-sm px-2 bg-[#E5E5E5] border-2 border-[#000000]"
 								>
 									{statusOptions.map((status) => (
 										<option key={status} value={status}>
@@ -120,13 +127,13 @@ const GoalsOverview = () => {
 							<div className="flex gap-2 mt-3">
 								<button
 									onClick={() => handleEdit(goal)}
-									className="text-blue-600 hover:underline"
+									className="text-blue-600 hover:underline border-2 px-2 rounded-md bg-[#E5E5E5] border-[#000000]"
 								>
 									Edit
 								</button>
 								<button
 									onClick={() => handleDelete(goal._id)}
-									className="text-red-600 hover:underline"
+									className="text-red-600 hover:underline border-2 px-2 rounded-md bg-[#E5E5E5] border-[#000000]"
 								>
 									Delete
 								</button>
