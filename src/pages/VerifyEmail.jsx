@@ -41,11 +41,11 @@ const VerifyEmail = () => {
 					<div className="spinner"></div>
 				</div>
 			) : (
-				<div className="max-w-[500px] p-4 lg:p-8">
-					<h1 className="text-[#fdfffc] font-semibold text-[1.875rem] leading-[2.375rem]">
+				<div className="bg-[#403D39] rounded-lg max-w-[500px] p-8 lg:p-8">
+					<h1 className="text-[#FFFCF2] font-semibold text-[1.875rem] leading-[2.375rem]">
 						Verify Email
 					</h1>
-					<p className="text-[1.125rem] leading-[1.625rem] my-4 text-[#fdfffc]">
+					<p className="text-[1.125rem] leading-[1.625rem] my-4 text-[#FFFCF2]">
 						A verification code has been sent to you. Enter the code below
 					</p>
 					<form onSubmit={handleVerifyAndSignup}>
@@ -58,9 +58,9 @@ const VerifyEmail = () => {
 									{...props}
 									placeholder="-"
 									style={{
-										boxShadow: 'inset 0px -1px 0px rgba(255, 255, 255, 0.18)',
+										boxShadow: 'inset 0px -1px 0px #403D39',
 									}}
-									className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-[0.5rem] text-richblack-5 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-yellow-50"
+									className="w-[48px] lg:w-[60px] border-0 bg-[#E5E5E5] rounded-[0.5rem]  aspect-square text-center focus:border-0 focus:outline-2 "
 								/>
 							)}
 							containerStyle={{
@@ -70,7 +70,7 @@ const VerifyEmail = () => {
 						/>
 						<button
 							type="submit"
-							className="w-full bg-[#ccff33] py-[12px] px-[12px] rounded-[8px] mt-6 font-medium text-richblack-900"
+							className="w-full bg-[#EB5E28] py-[12px] px-[12px] rounded-[8px] mt-6 font-medium text-[#FFFCF2] focus:ring-[#EB5E28] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
 						>
 							Verify Email
 						</button>
