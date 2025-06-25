@@ -57,7 +57,7 @@ export const createGoalAPI = (goalData, token) => {
 	};
 };
 
-export const updateGoalAPI  = (goalId, updates, token) => {
+export const updateGoalAPI = (goalId, updates, token) => {
 	return async (dispatch) => {
 		const toastId = toast.loading('Loading...');
 		dispatch(setGoalLoading(true));

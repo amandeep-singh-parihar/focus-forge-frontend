@@ -23,7 +23,7 @@ export const startPomodoroAPI = (
 	return async (dispatch) => {
 		const toastId = toast.loading('Loading...');
 		dispatch(setPomodoroLoading(true));
-        
+
 		// debug
 		console.log('🚀 Sent Token:', token);
 		// Debug
@@ -54,7 +54,7 @@ export const updatePomodoroStatusAPI = (token, sessionId, status) => {
 		dispatch(setPomodoroLoading(true));
 
 		try {
-            const url = UPDATE_POMODORO_STATUS_API(sessionId);
+			const url = UPDATE_POMODORO_STATUS_API(sessionId);
 			const response = await apiConnector(
 				'PUT',
 				url,

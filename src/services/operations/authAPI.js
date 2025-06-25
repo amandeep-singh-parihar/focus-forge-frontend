@@ -8,7 +8,7 @@ const { SENDOTP_API, SIGNUP_API, LOGIN_API } = authEndpoints;
 
 export function sendOtp(email, navigate) {
 	return async (dispatch) => {
-		const toastId = toast.loading('Loading...');
+		const toastId = toast.loading('Sending OTP...');
 		dispatch(setLoading(true));
 
 		try {
@@ -17,22 +17,23 @@ export function sendOtp(email, navigate) {
 				checkUserPresent: true,
 			});
 
-			console.log('SENDOTP_API RESPONSE... ', response);
+			console.log('SENDOTP_API RESPONSE:', response);
 
-			console.log(response.data.success);
-
-			if (!response.data.success) {
-				throw new Error(response.data.message);
+			if (response?.data?.success) {
+				toast.success('OTP sent successfully!');
+				navigate('/verify-email'); 
+			} else {
+				toast.warn(
+					response?.data?.message || 'OTP may have already been sent.',
+				);
 			}
-
-			toast.success('OTP Send Successfully!');
-			navigate('/verify-email');
 		} catch (error) {
-			console.log('SENDOTP_API RESPONSE ERROR:', error);
+			console.log('SENDOTP_API ERROR:', error);
 			toast.error('Could not send OTP');
+		} finally {
+			dispatch(setLoading(false));
+			toast.dismiss(toastId);
 		}
-		dispatch(setLoading(false));
-		toast.dismiss(toastId);
 	};
 }
 
@@ -109,14 +110,11 @@ export function login(email, password, navigate) {
 			}
 
 			dispatch(setToken(token));
-			const userImage = user?.image
-				? user.image
-				: `https://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`;
+			const userImage = `https://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`;
 			dispatch(setUser({ ...user, image: userImage }));
 
-
 			localStorage.setItem('token', response.data.token);
-			localStorage.setItem('user', user);
+			localStorage.setItem('user', JSON.stringify(user));
 
 			toast.success('Login Successful');
 			navigate('/dashboard/my-profile');
