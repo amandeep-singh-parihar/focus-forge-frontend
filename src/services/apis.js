@@ -18,14 +18,15 @@ export const goalEndpoints = {
 
 // pomodoro endpoints
 export const pomodoroEndpoints = {
-  START_POMODORO_API: BASE_URL + '/pomodoro/start',
-  UPDATE_POMODORO_STATUS_API: (sessionId) => BASE_URL + `/pomodoro/${sessionId}/status`,
-  GET_POMODORO_SESSIONS_API: BASE_URL + '/pomodoro/user',
+	START_POMODORO_API: BASE_URL + '/pomodoro/start',
+	UPDATE_POMODORO_STATUS_API: (sessionId) =>
+		BASE_URL + `/pomodoro/${sessionId}/status`,
+	GET_POMODORO_SESSIONS_API: BASE_URL + '/pomodoro/user',
 };
 
 // summary endpoints
-export const summaryEndpoints = {
-	GET_TODAY_SUMMARY_API: BASE_URL + '/summary/',
+export const dailySummaryEndpoints = {
+	GET_TODAY_SUMMARY_API: BASE_URL + '/summary/today',
 	UPDATE_SUMMARY_API: BASE_URL + '/summary/update',
 };
 
