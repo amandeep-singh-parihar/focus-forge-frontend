@@ -21,7 +21,7 @@ export function sendOtp(email, navigate) {
 
 			if (response?.data?.success) {
 				toast.success('OTP sent successfully!');
-				navigate('/verify-email'); 
+				navigate('/verify-email');
 			} else {
 				toast.warn(
 					response?.data?.message || 'OTP may have already been sent.',

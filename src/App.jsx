@@ -5,20 +5,22 @@ import Signup from './pages/Signup.jsx';
 import VerifyEmail from './pages/VerifyEmail.jsx';
 import Login from './pages/Login.jsx';
 import './App.css';
-import MyProfile from '../src/components/Dashboard/MyProfile.jsx';
-import TodayProgress from '../src/components/Dashboard/ALLCards/TodayProgress.jsx';
-import GoalsOverview from '../src/components/Dashboard/ALLCards/GoalsOverview.jsx';
-import Kanban from '../src/components/Dashboard/ALLCards/Kanban.jsx';
-import PomodoroSession from '../src/components/Dashboard/ALLCards/PomodoroSession.jsx';
-import AboutUs from '../src/components/Dashboard/ALLCards/AboutUs.jsx';
-import Pricing from '../src/components/Dashboard/ALLCards/Pricing.jsx';
-import NotFoundPage from '../src/pages/NotFoundPage.jsx';
-import PrivateRoute from '../src/components/core/Auth/PrivateRoute.jsx';
+import PrivateRoute from './components/core/Auth/PrivateRoute.jsx';
+import DashboardLayout from './components/common/DashboardLayout.jsx';
+import MyProfile from './components/Dashboard/MyProfile.jsx';
+import TodayProgress from './components/Dashboard/ALLCards/TodayProgress.jsx';
+import GoalsOverview from './components/Dashboard/ALLCards/GoalsOverview.jsx';
+import Kanban from './components/Dashboard/ALLCards/Kanban.jsx';
+import PomodoroSession from './components/Dashboard/ALLCards/PomodoroSession.jsx';
+import AboutUs from './components/Dashboard/ALLCards/AboutUs.jsx';
+import Pricing from './components/Dashboard/ALLCards/Pricing.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
 
 function App() {
 	return (
-		<div className="App h-screen w-full flex items-center justify-center">
+		<div className="App">
 			<Routes>
+				{/* public Routes */}
 				<Route
 					path="/"
 					element={
@@ -27,7 +29,6 @@ function App() {
 						</OpenRoute>
 					}
 				/>
-
 				<Route
 					path="verify-email"
 					element={
@@ -36,7 +37,6 @@ function App() {
 						</OpenRoute>
 					}
 				/>
-
 				<Route
 					path="login"
 					element={
@@ -47,76 +47,23 @@ function App() {
 				/>
 
 				<Route
-					path="dashboard/my-profile"
 					element={
 						<PrivateRoute>
-							<MyProfile />
+							<DashboardLayout />
 						</PrivateRoute>
 					}
-				/>
+				>
+					<Route path="/dashboard/my-profile" element={<MyProfile />} />
+					<Route path="/dashboard/progress" element={<TodayProgress />} />
+					<Route path="/dashboard/goals" element={<GoalsOverview />} />
+					<Route path="/dashboard/kanban" element={<Kanban />} />
+					<Route path="/dashboard/pomodoro" element={<PomodoroSession />} />
 
-				<Route
-					path="/dashboard/progress"
-					element={
-						<PrivateRoute>
-							<TodayProgress />
-						</PrivateRoute>
-					}
-				/>
+					<Route path="/about" element={<AboutUs />} />
+					<Route path="/pricing" element={<Pricing />} />
 
-				<Route
-					path="/dashboard/goals"
-					element={
-						<PrivateRoute>
-							<GoalsOverview />
-						</PrivateRoute>
-					}
-				/>
-
-				<Route
-					path="/dashboard/kanban"
-					element={
-						<PrivateRoute>
-							<Kanban />
-						</PrivateRoute>
-					}
-				/>
-
-				<Route
-					path="/dashboard/pomodoro"
-					element={
-						<PrivateRoute>
-							<PomodoroSession />
-						</PrivateRoute>
-					}
-				/>
-
-				<Route
-					path="/about"
-					element={
-						<PrivateRoute>
-							<AboutUs />
-						</PrivateRoute>
-					}
-				/>
-
-				<Route
-					path="/pricing"
-					element={
-						<PrivateRoute>
-							<Pricing />
-						</PrivateRoute>
-					}
-				/>
-
-				<Route
-					path="*"
-					element={
-						<PrivateRoute>
-							<NotFoundPage />
-						</PrivateRoute>
-					}
-				/>
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
 			</Routes>
 		</div>
 	);

@@ -105,7 +105,10 @@ const GoalsOverview = () => {
 					</p>
 				) : (
 					goals.map((goal) => (
-						<div key={goal._id} className="p-4 border rounded-md shadow bg-white">
+						<div
+							key={goal._id}
+							className="p-4 border rounded-md shadow bg-white"
+						>
 							<h3 className="text-xl font-semibold capitalize">{goal.title}</h3>
 							<p className="text-sm text-gray-500 mt-1 mb-1">
 								Target : {goal.targetDate?.split('T')[0] || 'N/A'}

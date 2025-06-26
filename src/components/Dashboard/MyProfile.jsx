@@ -2,6 +2,7 @@ import React from 'react';
 import data from '../Dashboard/data.jsx';
 import Greeting from './Greeting.jsx';
 import Card from './ALLCards/Card.jsx';
+import Navbar from '../common/Navbar.jsx';
 
 function MyProfile() {
 	return (

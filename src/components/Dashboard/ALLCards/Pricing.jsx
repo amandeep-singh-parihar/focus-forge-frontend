@@ -63,8 +63,12 @@ function Pricing() {
 						<h2 className="text-2xl font-semibold mb-2 text-center text-[#FFFCF2]">
 							{plan.title}
 						</h2>
-						<p className="text-center text-3xl font-bold mb-4 text-[#FFFCF2]">{plan.price}</p>
-						<p className="text-center text-[#FFFCF2] mb-6">{plan.description}</p>
+						<p className="text-center text-3xl font-bold mb-4 text-[#FFFCF2]">
+							{plan.price}
+						</p>
+						<p className="text-center text-[#FFFCF2] mb-6">
+							{plan.description}
+						</p>
 						<ul className="mb-6 space-y-2 text-sm text-[#FFFCF2]">
 							{plan.features.map((feature, idx) => (
 								<li key={idx} className="flex items-center gap-2">
