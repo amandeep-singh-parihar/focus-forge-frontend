@@ -1,12 +1,48 @@
-# React + Vite
+# 🧠 FocusForge - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FocusForge** is a modern Student Productivity Dashboard designed to help learners manage tasks, set goals, track Pomodoro sessions, and monitor daily progress — all in one place. This is the frontend built using **React**, styled with **Tailwind CSS**, and connected to a robust Node.js backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## Expanding the ESLint configuration
+- 🔐 User Authentication (Login, Signup, Email Verification)
+- 📅 Task Dashboard (Create, update, filter by status)
+- 🎯 Goal Setting and Progress Tracking
+- ⏱ Pomodoro Timer with adjustable durations
+- 📈 Daily Summary ("Today's Progress") Visualization
+- 🧱 Kanban Board for task organization
+- 🖼 Profile Upload with Cloudinary integration
+- 🧭 Smooth Navigation with Protected Routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧰 Tech Stack
+
+- **Frontend Framework:** React (with Vite)
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v6
+- **State Management:** Redux Toolkit
+- **API Calls:** Axios
+- **Notifications:** React Hot Toast
+- **Animation:** Framer Motion
+- **Form Validation:** React Hook Form
+
+---
+
+## 📁 Folder Structure
+
+FocusForge-Frontend/
+│
+src/
+│
+├── assets/ # Static assets like images
+├── components/
+│ ├── common/ # Reusable UI components
+│ └── core/Auth/ # Auth components
+├── components/Dashboard/ # Dashboard-specific components
+├── pages/ # Route-level components
+├── reducer/ 
+├── services/
+│ └── operations/
+└── slices/ 
