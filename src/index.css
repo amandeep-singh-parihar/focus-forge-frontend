@@ -21,8 +21,8 @@ body {
 	height: 56px;
 	border-radius: 50%;
 	background:
-		radial-gradient(farthest-side, #eb5e28 94%, #0000) top/9px 9px no-repeat,
-		conic-gradient(#0000 30%, #eb5e28);
+		radial-gradient(farthest-side, #fe4a4b 94%, #0000) top/9px 9px no-repeat,
+		conic-gradient(#0000 30%, #fe4a4b);
 	-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
 	animation: spinner-c7wet2 1s infinite linear;
 }
@@ -31,4 +31,14 @@ body {
 	100% {
 		transform: rotate(1turn);
 	}
+}
+
+.Greeting,.SignupForm {
+	background: #103e4b;
+	background: linear-gradient(
+		90deg,
+		rgba(16, 62, 75, 1) 0%,
+		rgba(16, 62, 75, 1) 50%,
+		rgba(16, 62, 75, 1) 100%
+	);
 }

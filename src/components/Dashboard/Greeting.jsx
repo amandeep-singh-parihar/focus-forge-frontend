@@ -45,13 +45,13 @@ function Greeting() {
 	}, []);
 
 	return (
-		<div className="Greeting max-h-screen text-[#000000] flex justify-between items-center mt-12 bg-[#FFFFFF] p-12 px-12 rounded-md">
-			<div className="text-[#000000] flex flex-col justify-center gap-12">
+		<div className="Greeting max-h-screen flex justify-between items-center mt-12 bg-[#FFFFFF] p-12 px-14 rounded-md">
+			<div className="text-[#01aad3] flex flex-col justify-center gap-12">
 				<div className="flex flex-col justify-center gap-2">
 					<div className="text-4xl font-bold capitalize">
 						{greeting}, {userName}! 👋
 					</div>
-					<div className="text-[#000000] font-bold text-lg mb-4 text-opacity-80">
+					<div className="text-white font-bold text-lg mb-4 text-opacity-70">
 						{quote.text && (
 							<div className="text-md italic">
 								"{quote.text}"
@@ -71,7 +71,7 @@ function Greeting() {
 				<img
 					src={userImage}
 					alt="User"
-					className="w-40 h-40 rounded-full border-4 border-black shadow-md"
+					className="w-40 h-40 rounded-full border-4 border-[#01aad3] shadow-md"
 				/>
 			</div>
 		</div>

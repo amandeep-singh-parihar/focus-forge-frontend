@@ -55,13 +55,12 @@ function SignUpForm() {
 		<div className="flex min-h-screen items-center justify-center px-4 py-12">
 			{/* Outer container for the glass card effect */}
 			<div
-				className="
+				className="bg-[#1e1e1e]
           relative z-10 p-6 rounded-lg shadow-lg
-          bg-[#252422]
           backdrop-blur-md backdrop-filter
           border border-solid border-[#252422] border-opacity-30
           w-full max-w-xl
-          md:p-8
+          md:p-8 hover:border-[#01aad3] hover:border-2  hover:bg-[rgba(1,170,211,0.05)] transition duration-300
         "
 			>
 				<h2 className="mb-6 text-3xl font-bold text-[#FFFCF2] text-center">
@@ -81,7 +80,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="First Name"
-							className="w-full sm:w-1/2 rounded-md   bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+							className="w-full sm:w-1/2 rounded-md   bg-[#3f3d3a] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 						/>
 						<input
 							type="text"
@@ -90,7 +89,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Last Name"
-							className="w-full sm:w-1/2 rounded-md  bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+							className="w-full sm:w-1/2 rounded-md  bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 						/>
 					</div>
 
@@ -102,7 +101,7 @@ function SignUpForm() {
 						onChange={handleOnChange}
 						required
 						placeholder="Email"
-						className="w-full rounded-md   bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+						className="w-full rounded-md   bg-[#403D39] p-3 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 					/>
 
 					{/* Password */}
@@ -114,7 +113,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Password"
-							className="w-full rounded-md   bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+							className="w-full rounded-md   bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 						/>
 						<span
 							onClick={() => setShowPassword((prev) => !prev)}
@@ -137,7 +136,7 @@ function SignUpForm() {
 							onChange={handleOnChange}
 							required
 							placeholder="Confirm Password"
-							className="w-full rounded-md  bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+							className="w-full rounded-md  bg-[#403D39] p-3 pr-10 text-[#FFFCF2] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 						/>
 						<span
 							onClick={() => setShowConfirmPassword((prev) => !prev)}
@@ -155,10 +154,10 @@ function SignUpForm() {
 					<button
 						type="submit"
 						className="
-              w-full rounded-md bg-[#EB5E28] px-4 py-3 font-semibold
+              w-full rounded-md bg-[#fe4a4b] px-4 py-3 font-semibold
               text-[#FFFCF2] transition-all duration-200 hover:scale-95
               shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none
-              focus:outline-none focus:ring-2 focus:ring-[#EB5E28] focus:ring-offset-2
+              focus:outline-none focus:ring-2 focus:ring-[#01aad3] focus:ring-offset-2
             "
 					>
 						Sign Up

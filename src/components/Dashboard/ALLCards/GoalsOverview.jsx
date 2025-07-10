@@ -64,8 +64,8 @@ const GoalsOverview = () => {
 	const today = new Date().toISOString().split('T')[0];
 
 	return (
-		<div className="p-4 w-full max-w-6xl mx-auto">
-			<h2 className="text-4xl font-bold mb-4">Your Goals</h2>
+		<div className="p-4 w-full max-w-6xl mx-auto mt-8">
+			<h2 className="text-4xl font-bold mb-4 text-white">Your Goals</h2>
 
 			<form
 				onSubmit={handleSubmit}

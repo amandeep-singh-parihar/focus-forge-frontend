@@ -37,12 +37,12 @@ function LoginForm() {
 		<div
 			className="
         relative z-10 p-6 rounded-lg shadow-lg
-        bg-[#252422]
+        bg-[#1e1e1e]
         backdrop-blur-md backdrop-filter
         border border-solid border-[#252422] border-opacity-30
         max-w-lg
         mx-auto my-8
-        md:p-8 w-[450px] h-[500px]"
+        md:p-8 w-[450px] h-[500px] hover:border-[#01aad3] hover:border-2  hover:bg-[rgba(1,170,211,0.05)] transition duration-300"
 		>
 			<h2 className="text-3xl font-semibold text-[#FFFCF2] mb-4 text-center mt-8">
 				Welcome Back!
@@ -66,7 +66,7 @@ function LoginForm() {
 						value={email}
 						onChange={handleOnChange}
 						placeholder="Enter email address"
-						className="w-full rounded-[0.5rem] bg-[#403D39] text-[#FFFCF2] p-[12px] focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+						className="w-full rounded-[0.5rem] bg-[#403D39] text-[#FFFCF2] p-[12px] focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 					/>
 				</label>
 				<label className="relative">
@@ -80,7 +80,7 @@ function LoginForm() {
 						value={password}
 						onChange={handleOnChange}
 						placeholder="Enter Password"
-						className="w-full rounded-[0.5rem] bg-[#403D39] text-[#FFFCF2] p-[12px] pr-12 focus:outline-none focus:ring-2 focus:ring-[#EB5E28]"
+						className="w-full rounded-[0.5rem] bg-[#403D39] text-[#FFFCF2] p-[12px] pr-12 focus:outline-none focus:ring-2 focus:ring-[#01aad3]"
 					/>
 					<span
 						onClick={() => setShowPassword((prev) => !prev)}
@@ -96,10 +96,10 @@ function LoginForm() {
 				<button
 					type="submit"
 					className="
-            mt-6 rounded-[8px] bg-[#EB5E28] py-[8px] px-[12px] font-medium
+            mt-6 rounded-[8px] bg-[#fe4a4b] py-[8px] px-[12px] font-medium
             text-[#FFFCF2] transition-all duration-200 hover:scale-95
             shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none
-            focus:outline-none focus:ring-2 focus:ring-[#EB5E28] focus:ring-offset-2
+            focus:outline-none focus:ring-2 focus:ring-[#01aad3] focus:ring-offset-2
           "
 				>
 					Sign In
